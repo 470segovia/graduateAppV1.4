@@ -1,6 +1,7 @@
 # Graduate App
 # Phone managing system for companys
-![home](https://imgur.com/a/gIvuuVB)
+![Home](https://github.com/470segovia/graduateAppV1.4/blob/main/home.png)
+
 ## How to run
 Download files and run with docker on root folder:
 ```docker
