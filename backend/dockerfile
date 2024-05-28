@@ -1,0 +1,25 @@
+FROM node:latest
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copia el package.json y package-lock.json para instalar las dependencias
+COPY package.json ./
+
+# Instala las dependencias
+RUN npm install
+RUN npm install mysql2
+
+# Copia el script de espera
+# COPY wait-for-mysql.sh ./
+# RUN chmod +x wait-for-mysql.sh
+
+# Copia el resto del código fuente
+COPY . .
+
+# Expone el puerto en el que se ejecuta el servidor (por ejemplo, 5000)
+EXPOSE 5000
+
+# Comando para iniciar el servidor
+CMD ["npm", "start"]
+# CMD ["./wait-for-mysql.sh", "mysql_database", "npm", "start"]

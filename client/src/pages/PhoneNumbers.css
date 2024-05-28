@@ -1,0 +1,57 @@
+/* Styles for the phone numbers container */
+.phoneNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* Styles for each phone number card */
+.phoneNumber {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  width: calc(33.333% - 32px); /* 3 columns with gap */
+  box-sizing: border-box;
+}
+
+/* Styles for the title in the card */
+.phoneNumber h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+/* Styles for the paragraph in the card */
+.phoneNumber p {
+  margin: 8px 0;
+}
+
+/* Styles for the delete and update buttons */
+.phoneNumber button {
+  margin-right: 8px;
+}
+
+/* Specific styles for the "Add new phone number" button container */
+.addHome {
+  margin-top: 20px;
+}
+
+/* Styles for the link inside the button container */
+.addHome a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff; /* Blue color */
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Additional styles to prevent any style conflicts */
+.addHome a:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Prevent any additional styles from affecting the button */
+.addHome button {
+  display: none; /* Ensure no buttons inside the addHome container */
+}

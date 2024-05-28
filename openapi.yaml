@@ -1,0 +1,104 @@
+openapi: 3.0.0
+info:
+  title: Phone Numbers Management API
+  description: API for managing phone numbers including CRUD operations.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+    description: Development server
+paths:
+  /phoneNumbers:
+    get:
+      summary: Get all phone numbers
+      responses:
+        '200':
+          description: A list of phone numbers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PhoneNumber'
+    post:
+      summary: Add a new phone number
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PhoneNumber'
+      responses:
+        '200':
+          description: Successfully added
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhoneNumber'
+  /phoneNumbers/{id}:
+    get:
+      summary: Get a phone number by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the phone number to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Phone number details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhoneNumber'
+    put:
+      summary: Update a phone number by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the phone number to update
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PhoneNumber'
+      responses:
+        '200':
+          description: Successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhoneNumber'
+    delete:
+      summary: Delete a phone number by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the phone number to delete
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully deleted
+components:
+  schemas:
+    PhoneNumber:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the phone number
+        phoneNumber:
+          type: string
+          description: Phone number
+        company:
+          type: string
+          description: Company associated with the phone number
+        name:
+          type: string
+          description: Name associated with the phone number
