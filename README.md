@@ -27,3 +27,4 @@ A minor issue that can occur in this setup is when the backend container starts 
 
 ### Known bugs
 UpdatePhoneNumber.jsx is not passing correctly the value of the field of phonenumber to backend so it makes the correct query to database.
+Workaround: delete and add new number with company and name.
